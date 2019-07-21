@@ -1,3 +1,6 @@
+<div class="text-center">
+<img src="https://bankdarah.delvionita.me/assets/images/logo.png" class="img-fluid" alt="RS BORROMEUS"> 
+</div>
 <h1 class="pt-3">Laporan Reaksi Transfusi</h1>
 <div class="row">
 	<div class="col-sm-12 col-lg-12">
@@ -7,7 +10,7 @@
 				<div class="row">
 				    <div class="col">
 				    	<label>Catatan Reaksi</label>
-				      	<textarea class="form-control" name="alamat"></textarea>
+				      	<textarea class="form-control" name="reaksi_darah"></textarea>
 				    </div>
 				</div>
 				<hr/>
@@ -15,10 +18,10 @@
 				<div class="row">
 				    <div class="col">
 				    	<label>Report Nomor Register</label>
-						<select class="form-control darah" name="darah" required>
-				      		<option>ID Transaksi</option>
+						<select class="form-control darah" name="id_pesanan" required>
+				      		<option>ID Pesanan</option>
 				      		<?php foreach($list as $data){ ?>
-				      		<option value="<?php echo $data['id_pesanan'] ?>"><?php echo $data['golongan'] ?></option>
+				      		<option value="<?php echo $data['id_pesanan'] ?>"><?php echo $data['id_pesanan'] ?></option>
 				      		<?php } ?>
 				      	</select>
 				    </div>
@@ -44,15 +47,15 @@
 	var base_url = '<?php echo base_url("/") ?>'
 
 	$(document).ready(function(){
-		$('.darah').change(function(){
-			var id_darah = $(this).val();
+		$('.pesanan').change(function(){
+			var id_pesanan = $(this).val();
 
-			var ajax_link = base_url + 'pesanan/detail/' + id_darah
+			var ajax_link = base_url + 'reaksi' + id_pesanan
 
 			$.get(ajax_link).fail(function(xhr,code,err){
 				alert(err)
 			}).done(function(res){
-				$('.detail').html(res)
+				$('.reaksi').html(res)
 			});
 		});
 	});

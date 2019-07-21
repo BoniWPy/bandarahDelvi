@@ -7,8 +7,6 @@ class Pesanan extends MY_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		// //mengaktifkan debugging
-		// $this->output->enable_profiler(TRUE);
 		$this->userdata = $this->session->userdata();
 		$this->load->model("M_Pesanan");
 		$this->load->model("M_Darah");
@@ -85,4 +83,39 @@ class Pesanan extends MY_Controller {
 			"list"	=> $list
 		]);
 	}
+
+	public function reaksi($id_pesanan){
+
+		$detail = $this->M_Darah->detail($id_pesanan);
+
+		$data = (array) $detail[0];
+		
+		
+		$detail = "<div class='alert alert-info'>
+		<b>Golongan</b> : {$data['golongan']} <br/>
+		<b>Ukuran</b> : {$data['ukuran']} <br/>
+		<b>Jenis</b> : {$data['jenis']} <br/>
+		<b>Stok</b> : {$data['stok']}
+		</div>";
+
+		echo $detail;
+
+	}
+
+	public function batal(){
+		$detail	= $this->M_Darah->detail($id_pesanan);
+		
+
+		$data	= (array) $detail[0];
+
+		$detail = "<div class='alert alert-info'>
+		<b>Nama Pasien</b> : {$data['pasien']} <br/>
+		<b>Golongan Darah</b> : {$data['golongan']} <br/>
+		<b>Jumlah</b> : {$data['jumlah']} <br/>
+		<b>Catatan</b> : {$data['note']}
+		</div>";
+
+		echo $detail;
+	}
+
 }

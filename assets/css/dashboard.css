@@ -17,8 +17,8 @@ body {
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: 100; /* Behind the navbar */
-  padding: 48px 0 0; /* Height of navbar */
+  z-index: 70; /* Behind the navbar */
+  padding: 28px 0 0; /* Height of navbar */
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 }
 
@@ -81,15 +81,15 @@ body {
  */
 
 .navbar-brand {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
   font-size: 1rem;
-  background-color: rgba(0, 0, 0, .25);
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+  background-color: rgba(56, 56, 56, 0.788);
+  box-shadow: inset -1px 0 0 rgba(49, 49, 49, 0.904);
 }
 
 .navbar .form-control {
-  padding: .75rem 1rem;
+  padding: .55rem 1rem;
   border-width: 0;
   border-radius: 0;
 }
@@ -102,7 +102,7 @@ body {
 
 .form-control-dark:focus {
   border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .25);
 }
 
 .loader {

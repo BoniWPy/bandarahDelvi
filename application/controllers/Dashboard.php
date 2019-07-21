@@ -52,4 +52,12 @@ class Dashboard extends MY_Controller {
 		}
 		
 	}
+
+	public function pesanan_batal(){
+		$data = $this->db->query("SELECT * FROM pesanan where status = 'cancel_perawat'")->result_array();
+		
+		if( count($data) > 0 ){
+			echo "Ada Perubahan Pesanan";
+		}
+	}
 }

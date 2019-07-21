@@ -1,11 +1,14 @@
 <div class="pt-3 pb-2 mb-3 border-bottom">
-<h2>Halaman Login</h2>
+<div class="text-center">
+<img src="assets/images/logo.png" class="img-fluid" alt="RS BORROMEUS"> 
+</div>
+<!-- <h2>Bank Darah</h2> -->
 </div>
 <div class="row">
   <div class="col-sm-12 col-lg-6 offset-lg-3">
     <div class="card">
       <div class="card-header">
-        Login Form
+        Bank Darah RS.Borromeus
       </div>
       <div class="card-body">
         <form action="" method="post">

@@ -9,6 +9,7 @@ $userdata = $this->session->userdata();
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="icon" href="<?=base_url()?>/assets/images/icon.ico" type="image/ico">
     <title>Bank Darah RS. Boromeus</title>
     <link href="<?php echo base_url('/assets/css/bootstrap.min.css') ?>" rel="stylesheet" >
     <style>
@@ -34,7 +35,11 @@ $userdata = $this->session->userdata();
   <body>
   
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"> <?php echo isset($userdata['nama_user']) ? $userdata['nama_user'] : '' ?></a>
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
+      
+      
+      <?php echo isset($userdata['nama_user']) ? $userdata['nama_user'] : '' ?></a>
+      
       <?php
       if( isset($userdata['nik']) ){
         echo '<ul class="navbar-nav px-3">
@@ -45,7 +50,8 @@ $userdata = $this->session->userdata();
       }
       ?>
     </nav>
-
+<br>
+<br>
 <div class="container-fluid">
   <div class="row">
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -108,6 +114,12 @@ $userdata = $this->session->userdata();
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('/batal') ?>">
+              <span data-feather="clipboard"></span>
+              Pembatalan Pesanan
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('/pesanan/riwayat') ?>">
               <span data-feather="list"></span>
               Riwayat Pesanan
@@ -123,9 +135,10 @@ $userdata = $this->session->userdata();
           <?php } else { ?>
           <li class="nav-item">
             <a class="nav-link active" href="#">
-              <span data-feather="home"></span>
-              Login
+              <span data-feather=""></span>
+              <img src="assets/images/loader.gif" class="img-fluid" alt="RS BORROMEUS"> 
             </a>
+            
           </li>
           <?php } ?>
         </ul>

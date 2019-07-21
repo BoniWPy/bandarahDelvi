@@ -1,3 +1,6 @@
+<div class="text-center">
+<img src="https://bankdarah.delvionita.me/assets/images/logo.png" class="img-fluid" alt="RS BORROMEUS"> 
+</div>
 <h1 class="mb-3 pt-3">Pesanan</h1>
 <!-- <div><span class="mb-3 pt-3 font-weight-bold">Pesanan</span><span class="float-right font-weight-bold">test</span></div> -->
 <div class="row">
@@ -36,7 +39,9 @@
 						if( $data['status'] == 'waiting' ){
 							echo '<span class="badge badge-secondary">Menunggu Konfirmasi</span>';
 						}else if( $data['status'] == 'confirm' ){
-							echo '<span class="badge badge-success">Sudah dikonfirmasi</span>';
+							echo '<span class="badge badge-success">Pesanan Berhasil, Sudah dikonfirmasi</span>';
+						}else if( $data['status'] == 'cancel_perawat' ){
+							echo '<span class="badge badge-secondary">Perawat Minta Dibatalkan</span>';
 						}else{
 							echo '<span class="badge badge-danger">Dibatalkan</span>';
 						}

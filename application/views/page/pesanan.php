@@ -1,4 +1,8 @@
+<div class="text-center">
+<img src="https://bankdarah.delvionita.me/assets/images/logo.png" class="img-fluid" alt="RS BORROMEUS"> 
+</div>
 <h1 class="pt-3">Pesan Baru</h1>
+
 <div class="row">
 	<div class="col-sm-12 col-lg-12">
 		<div class="card card-body">

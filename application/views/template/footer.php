@@ -1,4 +1,4 @@
-	</main>
+</main>
   </div>
 </div>
 	<script src="<?php echo base_url('/assets/js/bootstrap.bundle.min.js') ?>"></script>
@@ -21,7 +21,8 @@
 		$(document).ready(function(){
 
 			alert_limit();
-			realtime_order();
+            realtime_order();
+            realtime_batal();
 
 		});
 
@@ -35,7 +36,7 @@
 				if( res != '' ) alert(res)
 			})
 
-			setTimeout("alert_limit()", 500000);
+			setTimeout("alert_limit()", 100000);
 		}
 
 		var realtime_order = function(){
@@ -49,7 +50,20 @@
 			})
 
 			setTimeout("realtime_order()", 100000);
-		}
+        }
+        
+        var realtime_batal = function(){
+
+            var ajax_link = base_url + 'dashboard/pesanan_batal'
+
+            $.get(ajax_link).fail(function(xhr,code,err){
+                alert(err)
+            }).done(function(res){
+                if( res != '' ) alert(res)
+            })
+
+            setTimeout("realtime_batal()", 100000);
+        }
 	</script>
 	<div class="loader"></div>
 	<?php endif; ?>
